@@ -1,1 +1,43 @@
-/* CSS obsahy zde */
+body.bg {
+  background-color: #1a1a1a;
+  background-image: url('gladiator.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  background: rgba(0, 0, 0, 0.80);
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 0 40px #000b  ;
+}
+input, select, button {
+  display: block;
+  width: 100%;
+  margin: 18px 0;
+  padding: 14px;
+  font-size: 21px;
+  border: none;
+  border-radius: 6px;
+}
+button {
+  background-color: #c99d4b;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+button:hover {
+  background-color: #e5b75c;
+}
+.note {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
