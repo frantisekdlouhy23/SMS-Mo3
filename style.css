@@ -1,20 +1,26 @@
 body.bg {
   background-color: #1a1a1a;
-  background-image: url('gladiator.jpg');
+  background-image: url('assets/gladiator.jpg');
   background-size: cover;
   background-position: center;
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
   margin: 0;
 }
+.logo {
+  display: block;
+  margin: 20px auto;
+  width: 180px;
+  height: auto;
+}
 .container {
   max-width: 600px;
-  margin: 80px auto;
+  margin: 40px auto;
   background: rgba(0, 0, 0, 0.80);
   padding: 40px 30px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 0 40px #000b  ;
+  box-shadow: 0 0 40px #000b;
 }
 input, select, button {
   display: block;
@@ -48,10 +54,13 @@ button:hover {
   margin-bottom: 12px;
 }
 .cas-radio {
-  text-align:left; 
-  max-width:400px;
-  margin:0 auto 16px auto;
-  font-size:17px;
-  color:#ffc04d;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto 16px auto;
+  font-size: 17px;
+  color: #ffc04d;
 }
-.cas-radio label { display:block; margin-bottom:9px; }
+.cas-radio label {
+  display: block;
+  margin-bottom: 9px;
+}
