@@ -30,3 +30,22 @@ window.addEventListener('DOMContentLoaded', function() {
 function odesliSms() {
   alert("Testovací SMS byla odeslána na tvé číslo. (Simulace)");
 }
+
+// Validace jména a čísla
+function validateAndContinue() {
+  const jmeno = document.getElementById('jmeno').value.trim();
+  const telefon = document.getElementById('telefon').value.trim();
+  const error = document.getElementById('error');
+  // Kontrola jména: dvě slova, každé začíná velkým písmenem
+  if (!/^[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+ [A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+$/.test(jmeno)) {
+    error.textContent = "Jméno musí být ve tvaru 'Jméno Příjmení' a začínat velkými písmeny!";
+    return;
+  }
+  // Kontrola čísla: +420XXXXXXXXX
+  if (!/^\+420\d{9}$/.test(telefon)) {
+    error.textContent = "Telefon musí být ve tvaru +420XXXXXXXXX (např. +420123456789)!";
+    return;
+  }
+  error.textContent = "";
+  goTo('balicek.html');
+}

@@ -11,8 +11,10 @@
     <input type="text" id="jmeno" placeholder="Jméno a příjmení">
     <input type="date" id="datum" placeholder="Datum narození">
     <input type="tel" id="telefon" placeholder="Telefonní číslo">
+    <div class="input-help">Zadejte číslo ve tvaru <b>+420XXXXXXXXX</b></div>
+    <div id="error" style="color:#ff4a4a;font-weight:bold;"></div>
     <p class="note">Platbou potvrzujete, že je vám více než 15 let nebo máte souhlas zákonného zástupce.</p>
-    <button onclick="goTo('balicek.html')">Pokračovat</button>
+    <button onclick="validateAndContinue()">Pokračovat</button>
   </div>
   <script src="script.js"></script>
 </body>
