@@ -3,18 +3,29 @@ function goTo(page) {
   window.location.href = page;
 }
 
-// Uloží volbu počtu SMS do localStorage a pokračuje na platbu
+// Uloží volbu počtu SMS a způsob rozeslání do localStorage a pokračuje na platbu
 function saveAndGo() {
   var smsCount = document.getElementById('pocetSms').value;
+  var radios = document.getElementsByName('casTyp');
+  var casTyp = "random";
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      casTyp = radios[i].value;
+      break;
+    }
+  }
   localStorage.setItem('smsCount', smsCount);
+  localStorage.setItem('casTyp', casTyp);
   window.location.href = 'platba.html';
 }
 
-// Na stránce platba.html zobrazí pouze správný QR a cenu
+// Na stránce platba.html zobrazí pouze správný QR a cenu, plus styl rozesílání
 window.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.includes('platba.html')) {
     var zone = document.getElementById('qrZone');
     var smsCount = localStorage.getItem('smsCount');
+    var casTyp = localStorage.getItem('casTyp');
+    var zvolenyCas = document.getElementById('zvolenyCas');
     if (smsCount === '1') {
       zone.innerHTML = '<img src="99.jpg" alt="QR platba 99 Kč" style="width: 250px;"><p>1 SMS / den – <b>99 Kč / měsíc</b></p>';
     } else if (smsCount === '2') {
@@ -24,6 +35,12 @@ window.addEventListener('DOMContentLoaded', function() {
     } else {
       zone.innerHTML = '<p style="color:#ff4a4a;font-weight:bold;">Nejprve si zvol počet SMS!</p>';
     }
+    var popis = "";
+    if (casTyp === "random") popis = "Náhodné rozesílání přes den";
+    else if (casTyp === "81218") popis = "8:00 / 12:00 / 18:00";
+    else if (casTyp === "6301117") popis = "6:30 / 11:00 / 17:00";
+    else if (casTyp === "91420") popis = "9:00 / 14:00 / 20:00";
+    if (popis) zvolenyCas.innerHTML = "<b>Zvolený způsob rozesílání:</b> " + popis;
   }
 });
 

@@ -13,6 +13,15 @@
       <option value="2">2 SMS / den</option>
       <option value="3">3 SMS / den</option>
     </select>
+
+    <h2 style="margin-top:32px;">Styl rozesílání</h2>
+    <div class="cas-radio">
+      <label><input type="radio" name="casTyp" value="random" checked> Random odeslání přes den (1/2/3 SMS denně)</label>
+      <label><input type="radio" name="casTyp" value="81218"> 8:00 / 12:00 / 18:00</label>
+      <label><input type="radio" name="casTyp" value="6301117"> 6:30 / 11:00 / 17:00</label>
+      <label><input type="radio" name="casTyp" value="91420"> 9:00 / 14:00 / 20:00</label>
+    </div>
+
     <button onclick="saveAndGo()">Pokračovat</button>
   </div>
   <script src="script.js"></script>
